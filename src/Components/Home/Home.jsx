@@ -1,10 +1,12 @@
+import FeaturedJobs from "../FeaturedJobs/FeaturedJobs";
+import JobCatagory from "../JobCatagory/JobCatagory";
 
 
 const Home = () => {
     return (
         <div>
-
-            <h1>Home</h1>
+            <JobCatagory></JobCatagory>
+            <FeaturedJobs></FeaturedJobs>
             
         </div>
     );
