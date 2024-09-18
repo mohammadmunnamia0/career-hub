@@ -21,7 +21,7 @@ const FeaturedJobs = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In alias voluptatum blanditiis incidunt. Quis illum, doloribus porro hic tempora modi?</p>
 
 
-            <div>
+            <div className="grid grid-cols-2">
             {
                 jobs.map(job =><Job key={job.id} job={job}></Job>)
                 
