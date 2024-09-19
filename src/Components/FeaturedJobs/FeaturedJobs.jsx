@@ -14,6 +14,17 @@ const FeaturedJobs = () => {
         } ,[]
     )
 
+
+
+    // হোম পেজ এ first 4 ta data show korbo then view all a click korle 6 tai show kore , aita best way na cause data kom tai amra aita kortasi
+
+    const[DataLength, SetDataLength] = useState(4);
+
+
+
+
+
+
     return (
         <div className="text-center">
 
@@ -23,9 +34,21 @@ const FeaturedJobs = () => {
 
             <div className="grid grid-cols-2">
             {
-                jobs.map(job =><Job key={job.id} job={job}></Job>)
+                jobs.slice(0, DataLength).map(job =><Job key={job.id} job={job}></Job>)
+
+                //slice(0, DataLength) ---> remove this and check the output u will see the difference
                 
             }
+            </div>
+            <div className={DataLength === jobs.length ? 'hidden' : ''} >
+
+                {/* conditional Class name when to hide the View All Jobs after load all jobs */}
+
+                <button onClick={()=> SetDataLength(jobs.length)} 
+
+                // onClick={()=> SetDataLength(jobs.length)} ---> click korle jobs ar full length 6ta data show korbe home a 
+                
+                className="btn btn-primary hover:bg-orange-700 text-white font-bold">View All Jobs</button>
             </div>
            
         </div>

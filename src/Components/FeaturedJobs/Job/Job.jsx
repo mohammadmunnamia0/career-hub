@@ -18,16 +18,16 @@ const Job = ({ job }) => {
                             className="rounded-xl" />
                     </figure>
                     <div className="card-body ">
-                        <div>
+                        <div> 
                             <h2 className="text-left text-lg font-bold">{job_title}</h2>
                             <h4 className="text-left">{company_name}</h4>
                         </div>
 
-                        <div className="card-actions ">
+                        <div className="card-actions mt-4 ">
                             <button className="btn btn-ghost  border-indigo-600">{remote_or_onsite}</button>
                             <button className="btn btn-ghost border-indigo-600">{job_type}</button>
                         </div>
-                        <div className="flex">
+                        <div className="flex mt-4">
                             <div className="flex"><IoLocationOutline className="text-2xl"></IoLocationOutline>{location}
                             </div>
                             <div className="flex ml-2">

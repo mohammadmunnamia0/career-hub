@@ -26,6 +26,48 @@
         "category_name":"Engineering Job",
         "availability":"224 Jobs Available"
 
+    },
+    {
+        "id":5,
+        "logo":"https://i.ibb.co/7WwFnjV/healthcare-1.png",
+        "category_name":"Healthcare",
+        "availability":"80+ Jobs Available"
+
+    },
+    {
+        "id":6,
+        "logo":"https://i.ibb.co/G0YvKLR/data-science-1.png",
+        "category_name":"Data Science",
+        "availability":"120 Jobs Available"
+
+    },
+    {
+        "id":7,
+        "logo":"https://i.ibb.co/7rNPNbZ/customer-service-1.png",
+        "category_name":"Customer Service",
+        "availability":"200 Jobs Available"
+
+    },
+    {
+        "id":8,
+        "logo":"https://i.ibb.co/LzKmcsS/legal-1.png",
+        "category_name":"Legal",
+        "availability":"50+ Jobs Available"
+
+    },
+    {
+        "id":9,
+        "logo":"https://i.ibb.co/T1drRdL/education-1.png",
+        "category_name":"Education & Training",
+        "availability":"140 Jobs Available"
+
+    },
+    {
+        "id":10,
+        "logo":"https://i.ibb.co/Jpj9LmG/hospitality-1.png",
+        "category_name":"Hospitality & Tourism",
+        "availability":"90 Jobs Available"
+        
     }
 
 ]
