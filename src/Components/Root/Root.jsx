@@ -13,6 +13,6 @@ const Root = () => {
             <Footer></Footer>
         </div>
     );
-};
+}; 
 
 export default Root;

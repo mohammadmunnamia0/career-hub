@@ -12,6 +12,7 @@ import Statics from './Components/Statics/Statics';
 import Applied from './Components/Applied/Applied';
 import Blog from './Components/Blog/Blog';
 import Error from './Components/Error/Error';
+import JobDetails from './Components/FeaturedJobs/JobDetails/JobDetails';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
         path:"/blog",
         element:<Blog></Blog>
       },
+      {
+        path:'/job/:id', //dynamic
+        element: <JobDetails></JobDetails>,
+        loader : ()=> fetch('../jobs.json')
+      }
     ],
   },
 ]);
