@@ -5,11 +5,33 @@ import { useState } from "react";
 
 const Applied = () => {
   const jobs = useLoaderData();
+
   const [JobsApplied, SetJobsApplied] = useState([]);
+
+  //Filter
+  const [JobsDisplay,SetJobsDisplay] = useState([]);
+
+  const HandleJobFiler = filter =>{
+    if(filter === "All")
+    {
+        SetJobsDisplay(JobsApplied);
+       
+    }
+    else if(filter === "Remote"){
+        const remoteJobs = JobsApplied.filter(job => job.remote_or_onsite === "Remote")
+        SetJobsDisplay(remoteJobs);
+    }
+    else if (filter === "Onsite"){
+        const onsiteJobs = JobsApplied.filter(job => job.remote_or_onsite === "Onsite")
+        SetJobsDisplay(onsiteJobs);
+    }
+  }
+
 
   useEffect(() => {
     const storeJobIds = GetJobApplication();
-    if (jobs.length > 0) {
+    if (jobs.length > 0) 
+        {
       const AppliedJobs = [];
       for (const id of storeJobIds) {
         // get the ids from the local storage
@@ -20,6 +42,7 @@ const Applied = () => {
       }
       // console.log(jobs,storeJobIds,AppliedJobs);
       SetJobsApplied(AppliedJobs);
+      SetJobsDisplay(AppliedJobs);
     }
   }, []);
 
@@ -30,21 +53,21 @@ const Applied = () => {
       {/* //Filter */}
 
       <details className="dropdown">
-        <summary className="btn m-1">Filter By</summary>
-        <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-          <li>
+        <summary tabIndex={0} role="button" className="btn m-1">Filter By</summary>
+        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+          <li onClick={()=> HandleJobFiler('Remote')}>
             <a>Remote</a>
           </li>
-          <li>
+          <li onClick={()=> HandleJobFiler('Onsite')}>
             <a>On-Site</a>
           </li>
-          <li>
+          <li onClick={()=> HandleJobFiler('All')}>
             <a>All</a>
           </li>
         </ul>
       </details>
 
-      {JobsApplied.map((job) => (
+      {JobsDisplay.map((job) => (
         <li key={job.id}>
           <div className="mt-4 card card-side bg-base-100 shadow-xl">
             <figure>
