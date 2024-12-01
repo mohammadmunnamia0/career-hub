@@ -1,5 +1,9 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { BsCurrencyDollar } from "react-icons/bs";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {SaveJobApplication} from "../../../utility/LocalStorage.js";
+
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -8,6 +12,12 @@ const JobDetails = () => {
   const job = jobs.find((job) => job.id === intId);
 
   console.log(job);
+
+  const applyTost = () =>{
+    SaveJobApplication(intId);
+    toast("Successfully Applied for Job");
+
+  }
 
   return (
     <div className="max-w-6xl mx-auto">
@@ -41,11 +51,13 @@ const JobDetails = () => {
                  
 
             <div className="mt-20">
-            <button className="btn w-full bg-indigo-400 text-zinc-200 font-bold">Add jobs</button>
+            <button onClick={applyTost} className="btn w-full bg-indigo-400 text-zinc-200 font-bold">Apply jobs</button>
             </div>
 
-        
+           
+      
         </div>
+        <ToastContainer />
 
       </div>
     </div>

@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./", // Set the root directory for imports
+      "paths": {
+        "@components/*": ["src/components/*"] // Example alias for components (optional)
+      }
+    },
+    "include": ["src/**/*"] // Include all files in the `src` folder
+  }
+  
